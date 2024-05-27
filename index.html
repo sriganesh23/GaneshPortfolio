@@ -8,6 +8,11 @@
     <meta name="description" content="Welcome to Ganesh's Portfolio. Full-Stack Web Developer and Android App Developer" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Javascript-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
@@ -445,5 +450,42 @@
 
     <script src="./assets/js/script.js"></script>
 
+    <script type="text/javascript">
+  (function() {
+    emailjs.init("8yg332GoPdQWtFr5w"); // Replace 'YOUR_USER_ID' with your actual user ID from EmailJS
+  })();
+</script>
+
+
+    <!-- Form submission script>
+  <script type="text/javascript">
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Collect form data
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Create email parameters
+    const emailParams = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message')
+    };
+
+    // Send the email
+    emailjs.send('service_ultd1tl', 'template_zeu7ahq', emailParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully!');
+      }, function(error) {
+        console.log('FAILED...', error);
+        alert('Failed to send email.');
+      });
+  });
+</script>
+
+    
   </body>
 </html>
